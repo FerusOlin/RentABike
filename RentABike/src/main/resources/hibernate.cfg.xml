@@ -28,36 +28,46 @@
 
 <hibernate-configuration>
 
-    <session-factory>
-
-        <!-- Database connection settings -->
-        <property name="connection.driver_class">org.h2.Driver</property>
-        <property name="connection.url">jdbc:h2:tcp://localhost/~/test;DB_CLOSE_DELAY=-1</property>
-        <property name="connection.username">sa</property>
-        <property name="connection.password"></property>
-
-        <!-- JDBC connection pool (use the built-in) -->
-        <property name="connection.pool_size">10</property>
-
-        <!-- SQL dialect -->
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="format_sql">true</property>
+    <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+    <property name="connection.driver_class">org.sqlite.JDBC</property>
+    <property name="connection.url">jdbc:sqlite:RentABike.sql</property>
+    <property name="connection.username"/>
+    <property name="connection.password"/>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">10</property>
+    <!-- SQL dialect
         <property name="dialect">org.hibernate.dialect.H2Dialect</property>
-
-        <!-- Disable the second-level cache  -->
-        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
-
-        <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">true</property>
-
-        <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">create-drop</property>
-
-        <!-- Names the annotated entity class -->
-        <mapping class="de.fhwedel.delivery.model.Ingredient"/>
-        <mapping class="de.fhwedel.delivery.model.Pizza"/>
-        <mapping class="de.fhwedel.delivery.model.Product"/>
-        <mapping class="de.fhwedel.delivery.model.Purchase"/>
-        <mapping class="de.fhwedel.delivery.model.Customer"/>
-        <mapping class="de.fhwedel.delivery.model.Address" />
-    </session-factory>
+-->
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    
+    <!-- Names the annotated entity class -->
+    <mapping class="de.fhwedel.delivery.model.Accessoires"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Address"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Bike"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Chainlock"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Child"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Customer"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Defect"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Employee"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Female"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Helmet"></mapping>
+    <mapping class="de.fhwedel.delivery.model.InStore"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Item"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Male"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Online"></mapping>
+    <mapping class="de.fhwedel.delivery.model.OnlineAccess"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Person"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Promotion"></mapping>
+    <mapping class="de.fhwedel.delivery.model.RentingOrder"></mapping>
+    <mapping class="de.fhwedel.delivery.model.Trailer"></mapping>
+  </session-factory>
 
 </hibernate-configuration>
