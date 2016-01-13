@@ -5,10 +5,20 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Item {
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ITEM")
+@Inheritance(strategy=InheritanceType.TABLE_PER_CLASS)
+public class Item implements Serializable {
+    @Id
+     @GeneratedValue(strategy = GenerationType.TABLE)
+    int ItemID;
     
+   
+    double Price;
+            
+
 }

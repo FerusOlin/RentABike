@@ -5,10 +5,19 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Chainlock::Chainlock {
-    
+
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "CHAILOCK")
+public class Chainlock extends Accessoires {
+    int SecuretyLevel;
+    lockType lockCategory;
+}
+enum lockType
+{
+ CableLock,
+ ChainLock,
+ ULock
 }

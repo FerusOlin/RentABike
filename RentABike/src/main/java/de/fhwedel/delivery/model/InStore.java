@@ -5,7 +5,10 @@
  */
 package de.fhwedel.delivery.model;
 
+import javax.persistence.*;
 
-public class InStore extends Order{
+
+public class InStore extends RentingOrder{
+    @ManyToOne
     Employee assistendEmployee;
 }

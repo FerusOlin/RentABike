@@ -9,23 +9,17 @@ import javax.persistence.*;
 public class Defect implements Serializable {
 
  @Id
- @GeneratedValue(strategy = GenerationType.IDENTITY)
- @Column(name = "id")
-  int id; 
- 
-@Column(name="Description")    
- String Description;  
-
+ @GeneratedValue(strategy = GenerationType.TABLE)
+ int id; 
+ String Description; 
 @OneToOne(fetch=FetchType.LAZY)
-@JoinColumn(name="id")
  Employee assighnedEngeneer;
-
-@Column(name="State")
- Condition DefectState; 
+boolean fixed;
+Condition DefectState; 
+ 
 
 @OneToOne(fetch=FetchType.LAZY)
-@JoinColumn(name="ADDRESS_ID")
- Order likedOrder ;  
+ RentingOrder linkedOrder ;  
  
 }
 enum Condition

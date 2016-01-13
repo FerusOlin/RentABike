@@ -5,10 +5,12 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Accessoires::Item {
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "ACCESSOIRES")
+public class Accessoires extends Item {
+   
     
 }

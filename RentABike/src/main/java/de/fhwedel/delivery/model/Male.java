@@ -5,10 +5,11 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Male::Bike {
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "MALE")
+public class Male extends Bike {
     
 }

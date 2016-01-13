@@ -5,10 +5,12 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Child::Bike {
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "BIKE")
+public class Child extends Bike {
+    boolean supportWheels; 
     
 }

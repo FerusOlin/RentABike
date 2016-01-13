@@ -5,10 +5,27 @@
  */
 package de.fhwedel.delivery.model;
 
-/**
- *
- * @author TorbenZurhelle
- */
-public class Bike::Item {
-    
+
+import java.awt.Color ;
+import java.util.Set;
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "BIKE")
+public class Bike extends Item {
+   
+   String Model;
+   String Brand;
+   String FrameNumber;
+    Color Color;
+   
+  
+    int Gears;
+   
+ 
+    int FrameSize;
+   
+   @OneToMany(cascade=CascadeType.ALL)
+    Set<Defect> Defects;
 }

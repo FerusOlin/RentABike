@@ -5,18 +5,27 @@
  */
 package de.fhwedel.delivery.model;
 import com.google.common.base.Objects;
-import javax.persistence.*; 
+import java.io.Serializable;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "ADDRESS")
-public class Address {
+public class Address implements Serializable {
+   
+    @Id
+    @GeneratedValue(strategy = GenerationType.TABLE)
    private  Long  id;
+   
+
     private String street;
+   
     private String zip;
+   
     private String city;
+   
     private String country;
 
-    private Address() {
+    public Address() {
     }
 
     public Address(Long id) {
@@ -30,8 +39,8 @@ public class Address {
         this.country = country;
     }
 
-    @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+   
+    
     public Long getId() {
         return id;
     }
@@ -40,7 +49,7 @@ public class Address {
         this.id = id;
     }
 
-    @Column(nullable = false)
+  
     public String getStreet() {
         return street;
     }
@@ -49,7 +58,7 @@ public class Address {
         this.street = street;
     }
 
-    @Column(nullable = false)
+   
     public String getZip() {
         return zip;
     }
@@ -58,7 +67,7 @@ public class Address {
         this.zip = zip;
     }
 
-    @Column(nullable = false)
+  
     public String getCity() {
         return city;
     }
@@ -67,7 +76,6 @@ public class Address {
         this.city = city;
     }
 
-    @Column(nullable = false)
     public String getCountry() {
         return country;
     }

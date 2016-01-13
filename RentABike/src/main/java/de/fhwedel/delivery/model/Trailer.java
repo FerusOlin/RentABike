@@ -8,10 +8,9 @@ import javax.persistence.*;
 @Table(name = "Trailer")
 public class Trailer extends Accessoires {
     
-   @Column(name="type")
+  
     trailerUse type;
    
-   @Column(name="rainproof")
     Boolean rainproof;
 }
 enum trailerUse
